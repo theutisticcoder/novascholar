@@ -805,11 +805,9 @@
         }).then(async response => {
             console.log(response);
              
-          const data = await response.json();
-          if (data.error) throw new Error(data.error.message);
+          const data = response.message.content[0].text;
 
-          const jsonText = data.candidates[0].content.parts[0].text;
-          const examData = JSON.parse(jsonText);
+          const examData = JSON.parse(data);
 
           onStartExam(examData);
         });
