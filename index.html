@@ -807,7 +807,7 @@
              
           const data = response.message.content[0].text;
 
-          const examData = JSON.parse(data);
+          const examData = JSON.parse(data.message.content);
 
           onStartExam(examData);
         });
