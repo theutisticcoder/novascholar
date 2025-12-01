@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color: rgb(4, 42, 4);" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +10,13 @@
 <body>
     <h1>Intro:</h1>
     <br>
-    <textarea name="" style="height: 50vh; width: 50vw; " id="essay"></textarea>
+    <textarea name="" style="height: 30vh; width: 50vw; background: rgb(96, 167, 96);"></textarea>
     <h1>Body 1:</h1>
     <br>
-    <textarea name="" style="height: 50vh; width: 50vw; " id="essay1"></textarea>
+    <textarea name="" style="height: 30vh; width: 50vw; background: rgb(96, 167, 96);" id="essay1"></textarea>
     <h1>Body 2:</h1>
     <br>
-    <textarea name="" style="height: 50vh; width: 50vw; " id="essay2"></textarea>
+    <textarea name="" style="height: 30vh; width: 50vw; background: rgb(96, 167, 96);"></textarea>
     <script>
         var text = "    ";
         text += prompt("Lure in the audience with an exciting (but formal) hook sentence setting up for introducing the book.")
@@ -28,15 +28,15 @@
         text += prompt("Give a summary of the text.");
         text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
         document.querySelector("#essay").value += text;
-        var text = "    ";
+        text = "    ";
         text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
         text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
         text += prompt("Analyze the text according to your quote and the prompt.")
         text += prompt("Sum up the paragraph with a conclusion sentence")
-        var text = "    ";
         document.querySelector("#essay1").value += text;
+        text = "    ";
         text += prompt("Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
