@@ -23,22 +23,27 @@
         text += "."
         text += prompt("Give a summary of the text.");
         text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
-        text += "\n    "
-        text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
+        document.querySelector("#essay").innerHTML += "<br>";
+        var text = "    ";
+        document.querySelector("#essay").innerHTML += text;
+         text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
         text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
         text += prompt("Analyze the text according to your quote and the prompt.")
         text += prompt("Sum up the paragraph with a conclusion sentence")
-        text += "\n    "
+        document.querySelector("#essay").innerHTML += "<br>";
+       var text = "    ";
+        document.querySelector("#essay").innerHTML += text; 
         text += prompt("Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
         text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
         text += prompt("Analyze the text according to your quote and the prompt.")
         text += prompt("Sum up the paragraph with a conclusion sentence")
-       localStorage.setItem("text", text)
-        document.querySelector("#essay").innerHTML = text;
+        localStorage.setItem("text", text)
+        var text = "    ";
+        document.querySelector("#essay").innerHTML += text;
     </script>
 </body>
 
