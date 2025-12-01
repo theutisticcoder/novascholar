@@ -14,7 +14,7 @@
     <br>
     <textarea name="" id="essay" style="height: 30vh; width: 50vw; background: rgb(96, 167, 96);"></textarea>
     <script>
-        const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17']
+        const steps = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']
         const Queue = Swal.mixin({
             progressSteps: steps,
             confirmButtonText: 'Next >',
@@ -128,9 +128,33 @@
                 confirmButtonText: 'OK',
 
             })
-            console.log((tex + "An example of this is '" + tex2 + "' by " + tex3 + "." + tex4 + tex5 + `<br>` + tex6 + " " + tex7 + " According to " + tex8 + ', "' + tex9 + '." ' + tex10 + tex11 + "<br>" + tex12 + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '." ' + tex16 + tex17))
-            document.querySelector("#essay").innerHTML += (tex + "An example of this is '" + tex2 + "' by " + tex3 + "." + tex4 + tex5 + `<br>` + tex6 + " " + tex7 + " According to " + tex8 + ', "' + tex9 + '." ' + tex10 + tex11 + "<br>" + tex12 + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '." ' + tex16 + tex17)
 
+            var { value: tex18 } = await Queue.fire({
+                currentProgressStep: 17,
+                input: "textarea",
+                inputLabel: "restate the thesis of the essay in new diction or wording. Start with a conclusive transition word.",
+                inputPlaceholder: "Write here..."
+            })
+            var { value: tex19 } = await Queue.fire({
+                currentProgressStep: 18,
+                input: "textarea",
+                inputLabel: "Summarize the key takeaways and points from the body paragraphs to wrap up the reasoning.",
+                inputPlaceholder: "Write here..."
+            })
+
+            var { value: tex20 } = await Queue.fire({
+                currentProgressStep: 19,
+                input: "textarea",
+                inputLabel: "Sum up the whole essay with a wise idea or talking point. A sentence a reader can take with them.",
+                inputPlaceholder: "Write here...",
+                confirmButtonText: 'OK',
+
+            })
+            document.querySelector("#essay").innerHTML += ("\t" + tex + "An example of this is '" + tex2 + "' by " + tex3 + "." + tex4 + tex5 )
+            document.querySelector("#essay").innerHTML += "<br>"
+            document.querySelector("#essay").innerHTML += ("\t" + tex6 + " " + tex7 + " According to " + tex8 + ', "' + tex9 + '." ' + tex10 + tex11 )
+            document.querySelector("#essay").innerHTML += "<br>"
+            document.querySelector("#essay").innerHTML += ( "\t" + tex12 + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '." ' + tex16 + tex17)
         })();
     </script>
 </body>
