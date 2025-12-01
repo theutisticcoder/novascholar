@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Essay Sewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -19,32 +21,101 @@
     <textarea name="" style="height: 30vh; width: 50vw; background: rgb(96, 167, 96);"></textarea>
     <script>
         var text = "    ";
-        text += prompt("Lure in the audience with an exciting (but formal) hook sentence setting up for introducing the book.")
-        text += "An example of this is '"
-        text += prompt("Enter the name of the text.")
-        text += "' by "
-        text += prompt("Enter the author's name.")
-        text += "."
-        text += prompt("Give a summary of the text.");
-        text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
-        document.querySelector("#essay").value += text;
-        text = "    ";
-        text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
-        text += " "
-        text += prompt("Give a background for the upcoming quote.");
-        text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
-        text += prompt("Analyze the text according to your quote and the prompt.")
-        text += prompt("Sum up the paragraph with a conclusion sentence")
-        document.querySelector("#essay1").value += text;
-        text = "    ";
-        text += prompt("Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.")
-        text += " "
-        text += prompt("Give a background for the upcoming quote.");
-        text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
-        text += prompt("Analyze the text according to your quote and the prompt.")
-        text += prompt("Sum up the paragraph with a conclusion sentence")
-        localStorage.setItem("text", text)
-        document.querySelector("#essay2").innerHTML += text;
+        (async () => {
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Lure in the audience with an exciting (but formal) hook sentence setting up for introducing the book.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += "An example of this is '"
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the name of the text.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += "' by "
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the author's name.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += "."
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Give a summary of the text.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'",
+                inputPlaceholder: "Write here..."
+            }).value
+            document.querySelector("#essay").value += text;
+            text = "    ";
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += " "
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Give a background for the upcoming quote.",
+                inputPlaceholder: "Write here..."
+            }).value;
+            text += " According to " + await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the text's name",
+                inputPlaceholder: "Write here..."
+            }).value + ', "' + await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the quote here.",
+                inputPlaceholder: "Write here..."
+            }).value + '." '
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Analyze the text according to your quote and the prompt.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Sum up the paragraph with a conclusion sentence",
+                inputPlaceholder: "Write here..."
+            }).value
+            document.querySelector("#essay1").value += text;
+            text = "    ";
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += " "
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Give a background for the upcoming quote.",
+                inputPlaceholder: "Write here..."
+            }).value;
+            text += " According to " + await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the text's name",
+                inputPlaceholder: "Write here..."
+            }).value + ', "' + await Swal.fire({
+                input: "textarea",
+                inputLabel: "Enter the quote here.",
+                inputPlaceholder: "Write here..."
+            }).value + '." '
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Analyze the text according to your quote and the prompt.",
+                inputPlaceholder: "Write here..."
+            }).value
+            text += await Swal.fire({
+                input: "textarea",
+                inputLabel: "Sum up the paragraph with a conclusion sentence",
+                inputPlaceholder: "Write here..."
+            }).value
+            document.querySelector("#essay2").innerHTML += text;
+        })()
     </script>
 </body>
 
