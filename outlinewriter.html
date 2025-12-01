@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <textarea name="" id="essay"></textarea>
     <script>
-        window.onload = ()=> {
-            if(localStorage.getItem("text"))
-        document.querySelector("#essay").innerText = localStorage.getItem("text");
+        window.onload = () => {
+            if (localStorage.getItem("text"))
+                document.querySelector("#essay").innerText = localStorage.getItem("text");
         }
         var text = "    ";
-        text += prompt("Lure in the audience with an exciting (but formal) hook sentence.")
-        text += " In '"
+        text += prompt("Lure in the audience with an exciting (but formal) hook sentence setting up for introducing the book.")
+        text += "An example of this is '"
         text += prompt("Enter the name of the text.")
         text += "' by "
         text += prompt("Enter the author's name.")
-        text += ", "
+        text += "."
         text += prompt("Give a summary of the text.");
         text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
         text += "\n    "
-        localStorage.setItem("text", text)
+        text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
+        text += " "
+        text += prompt("Give a background for the upcoming quote.");
+        text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
+        text += prompt("Analyze the text according to your quote and the prompt.")
+        text += prompt("Sum up the paragraph with a conclusion sentence")
+        text += "\n    "
+        text += prompt("Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.")
+        text += " "
+        text += prompt("Give a background for the upcoming quote.");
+        text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
+        text += prompt("Analyze the text according to your quote and the prompt.")
+        text += prompt("Sum up the paragraph with a conclusion sentence")
+       localStorage.setItem("text", text)
         document.querySelector("#essay").innerText = text;
     </script>
 </body>
+
 </html>
