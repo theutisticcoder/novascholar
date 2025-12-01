@@ -23,18 +23,18 @@
         text += "."
         text += prompt("Give a summary of the text.");
         text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
-        document.querySelector("#essay").innerHTML += "<br>";
+        document.querySelector("#essay").value += "<br>";
         var text = "    ";
-        document.querySelector("#essay").innerHTML += text;
+        document.querySelector("#essay").value += text;
          text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
         text += " According to " + prompt("Enter the text's name") + ', "' + prompt("Enter the quote here.") + '." '
         text += prompt("Analyze the text according to your quote and the prompt.")
         text += prompt("Sum up the paragraph with a conclusion sentence")
-        document.querySelector("#essay").innerHTML += "<br>";
+        document.querySelector("#essay").value += "\n";
        var text = "    ";
-        document.querySelector("#essay").innerHTML += text; 
+        document.querySelector("#essay").value += text; 
         text += prompt("Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
@@ -42,7 +42,6 @@
         text += prompt("Analyze the text according to your quote and the prompt.")
         text += prompt("Sum up the paragraph with a conclusion sentence")
         localStorage.setItem("text", text)
-        var text = "    ";
         document.querySelector("#essay").innerHTML += text;
     </script>
 </body>
