@@ -800,7 +800,7 @@
             IMPORTANT: Return ONLY the RAW JSON. No markdown formatting.`;
 
         try {
-          puter.ai.chat(prompt, {
+          await puter.ai.chat(prompt, {
             model: 'openrouter:tngtech/deepseek-r1t2-chimera:free'
         }).then(async response => {
             console.log(response);
