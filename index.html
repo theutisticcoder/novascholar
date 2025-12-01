@@ -806,11 +806,11 @@
                   })
                 });
           const data = response.json();
-          alert(response);
+          alert(JSON.parse(data));
 
 
 
-          onStartExam(data);
+          onStartExam(JSON.parse(data));
         
          
         } catch (err) {
