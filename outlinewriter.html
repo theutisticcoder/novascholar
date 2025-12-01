@@ -8,14 +8,13 @@
 </head>
 
 <body>
-    <textarea name="" style="height: 50vh; width: 50vw; text-align: center;" id="essay"></textarea>
-    <textarea name="" style="height: 50vh; width: 50vw; text-align: center;" id="essay1"></textarea>
-    <textarea name="" style="height: 50vh; width: 50vw; text-align: center;" id="essay2"></textarea>
+    Intro:
+    <textarea name="" style="height: 50vh; width: 50vw; " id="essay"></textarea>
+    Body 1:
+    <textarea name="" style="height: 50vh; width: 50vw; " id="essay1"></textarea>
+    Body 2:
+    <textarea name="" style="height: 50vh; width: 50vw; " id="essay2"></textarea>
     <script>
-        window.onload = () => {
-            if (localStorage.getItem("text"))
-                document.querySelector("#essay").innerText = localStorage.getItem("text");
-        }
         var text = "    ";
         text += prompt("Lure in the audience with an exciting (but formal) hook sentence setting up for introducing the book.")
         text += "An example of this is '"
@@ -25,8 +24,8 @@
         text += "."
         text += prompt("Give a summary of the text.");
         text += prompt("Introduce the essay with a thesis. This would involve a structure of a claim and two reasons why it is true (to be explained the the following paragraphs). For example, 'Apples are the best fruit because they are high in fiber and are very sweet.'")
-        var text = "    ";
         document.querySelector("#essay1").value += text;
+        var text = "    ";
         text += prompt("Enter a topic sentence that introduces the first reason in the thesis for the following paragraph.")
         text += " "
         text += prompt("Give a background for the upcoming quote.");
