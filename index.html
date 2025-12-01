@@ -805,7 +805,8 @@
                       generationConfig: { responseMimeType: "application/json" }
                   })
                 });
-          const data = response.json().message.content[0].text;
+          const data = response.json().candidates[0].content.parts[0].text;
+
 
           const examData = JSON.parse(data.message.content);
 
