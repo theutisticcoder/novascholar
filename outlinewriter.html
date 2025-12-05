@@ -90,50 +90,64 @@
                 inputLabel: "Enter the quote here.",
                 inputPlaceholder: "Write here..."
             })
-            var { value: tex10 } = await Queue.fire({
+            var {value: texpage1} = await Queue.fire({
                 currentProgressStep: 9,
+                  grow: 'fullscreen', // This is the key property
+                input: "input",
+                inputLabel: "Enter the Page Number",
+                inputPlaceholder: "Write here..."
+            })
+            var { value: tex10 } = await Queue.fire({
+                currentProgressStep: 10,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Analyze the text according to your quote and the prompt.",
                 inputPlaceholder: "Write here..."
             })
             var { value: tex11 } = await Queue.fire({
-                currentProgressStep: 10,
+                currentProgressStep: 11,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Sum up the paragraph with a conclusion sentence",
                 inputPlaceholder: "Write here..."
             })
             var { value: tex12 } = await Queue.fire({
-                currentProgressStep: 11,
+                currentProgressStep: 12,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Enter a topic sentence that introduces the second reason in the thesis for the following paragraph.",
                 inputPlaceholder: "Write here..."
             })
             var { value: tex13 } = await Queue.fire({
-                currentProgressStep: 12,
+                currentProgressStep: 13,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Give a background for the upcoming quote.",
                 inputPlaceholder: "Write here..."
             });
             var { value: tex14 } = await Queue.fire({
-                currentProgressStep: 13,
+                currentProgressStep: 14,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Enter the text's name",
                 inputPlaceholder: "Write here..."
             })
             var { value: tex15 } = await Queue.fire({
-                currentProgressStep: 14,
+                currentProgressStep: 15,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Enter the quote here.",
                 inputPlaceholder: "Write here..."
             })
+             var {value: texpage2} = await Queue.fire({
+                currentProgressStep: 9,
+                  grow: 'fullscreen', // This is the key property
+                input: "input",
+                inputLabel: "Enter the Page Number",
+                inputPlaceholder: "Write here..."
+            })
             var { value: tex16 } = await Queue.fire({
-                currentProgressStep: 15,
+                currentProgressStep: 17,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Analyze the text according to your quote and the prompt.",
@@ -141,7 +155,7 @@
             })
 
             var { value: tex17 } = await Queue.fire({
-                currentProgressStep: 16,
+                currentProgressStep: 18,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Sum up the paragraph with a conclusion sentence",
@@ -151,14 +165,14 @@
             })
 
             var { value: tex18 } = await Queue.fire({
-                currentProgressStep: 17,
+                currentProgressStep: 19,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "restate the thesis of the essay in new diction or wording. Start with a conclusive transition word.",
                 inputPlaceholder: "Write here..."
             })
             var { value: tex19 } = await Queue.fire({
-                currentProgressStep: 18,
+                currentProgressStep: 20,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Summarize the key takeaways and points from the body paragraphs to wrap up the reasoning.",
@@ -166,7 +180,7 @@
             })
 
             var { value: tex20 } = await Queue.fire({
-                currentProgressStep: 19,
+                currentProgressStep: 21,
                   grow: 'fullscreen', // This is the key property
                 input: "textarea",
                 inputLabel: "Sum up the whole essay with a wise idea or talking point. A sentence a reader can take with them.",
@@ -174,11 +188,11 @@
                 confirmButtonText: 'OK',
 
             })
-            document.querySelector("#essay").innerHTML += ("\t" + tex + "An example of this is '" + tex2 + "' by " + tex3 + ". " + tex4 + tex5 )
+            document.querySelector("#essay").innerHTML += ("\t" + tex + "An example of this is <em>"+ tex2 + "</em> "+ tex3 + ". " + tex4 + tex5 )
             document.querySelector("#essay").innerHTML += "<br>"
-            document.querySelector("#essay").innerHTML += ("\t" + tex6 + " " + tex7 + " According to " + tex8 + ', "' + tex9 + '." ' + tex10 + tex11 )
+            document.querySelector("#essay").innerHTML += ("\t" + tex6 + " " + tex7 + " According to " + tex8 + ', "' + tex9 + '" ('+ (texpage1) + ")." + tex10 + tex11 )
             document.querySelector("#essay").innerHTML += "<br>"
-            document.querySelector("#essay").innerHTML += ( "\t" + tex12 + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '." ' + tex16 + tex17)
+            document.querySelector("#essay").innerHTML += ( "\t" + tex12 + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '" ('+ (texpage2) + ")." + tex16 + tex17)
             document.querySelector("#essay").innerHTML += "<br>"
             document.querySelector("#essay").innerHTML += ( "\t" + + " " + tex13 + " According to " + tex14 + ', "' + tex15 + '." ' + tex16 + tex17)
         })();
